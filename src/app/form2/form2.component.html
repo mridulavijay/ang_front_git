@@ -1,0 +1,20 @@
+<form [formGroup]="signup">
+    <div class="form-group">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" id='email'class="form-control" formControlName="email" >
+      <!-- <div *ngIf="f.email.invalid&&(f.email.dirty||f.email.touched)"class="invalid-feedback">
+        <p *ngIf="f.email.errors.required">Field cannot be empty</p>
+        <p *ngIf="f.email.errors.email">Email not valid </p>
+      </div> -->
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control"formControlName="password" [ngClass]="{'is-invalid':form2.password.errors&&(form2.password.touched||form2.password.dirty)}">
+        <div *ngIf="form2.password.invalid&&(form2.password.touched||form2.password.dirty)"class="invalid-feedback">
+            <p *ngIf="form2.password.errors.required">Field cannot be empty</p>
+            <p *ngIf="form2.password.errors.minlength">Minimum length is 8</p>
+        </div>
+    </div>
+    
+    <button type="submit"[disabled]="!signup.valid" class="btn btn-primary">Submit</button>
+  </form>

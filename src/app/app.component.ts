@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'firstapp';
+  title = 'Angular_FirstApp';
+  fname="Mridula";
+  ptag_var=true;
 }
